@@ -2,8 +2,7 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 
-public class UnitTest
-{
+public class UnitTest {
     @Test
     public void shouldReturnCorrectValue() {
         assertEquals(1, Main.getMetreFromCentimetre(100), 0);

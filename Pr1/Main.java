@@ -3,7 +3,7 @@ public class Main {
         System.out.println(getMetreFromCentimetre(243));
     }
 
-    public static double getMetreFromCentimetre(int centimetre) {
+    public static int getMetreFromCentimetre(int centimetre) {
         return centimetre/100;
     }
 }
