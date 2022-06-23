@@ -1,16 +1,18 @@
-import java.util.Scanner;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
-        System.out.println("format month number. year");
-        System.out.println("e.g. July 7. 2004");
-        System.out.print("\nWrite your date of birth: ");
+public class Main {
+    public static void main(String[] args) {
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+        String str = "2004-07-07";
 
-        Scanner scanner = new Scanner(System.in);
-        String birthday = scanner.nextLine();
-
-        System.out.println("Congratulation! your birthday " + birthday);
+        Date parsingDate;
+        try {
+            parsingDate = ft.parse(str);
+            System.out.println("My birthday " + parsingDate);
+        } catch (ParseException e) {
+            System.out.println("Error " + ft);
+        }
     }
 }
