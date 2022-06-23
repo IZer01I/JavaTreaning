@@ -6,7 +6,7 @@ public class UnitTest {
     @Test
     public void shouldReturnCorrectValue() { assertEquals("50.0", Main.convertEurToUsd(Main.test1, 10));}
 
-    @Test
+    @Test (expected = ArithmeticException.class)
     public void shouldReturnZeroValue() {
         assertEquals("you need to enter an amount greater than 0", Main.convertEurToUsd(Main.test2, 10));
     }
