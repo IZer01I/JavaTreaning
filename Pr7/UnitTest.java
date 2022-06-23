@@ -4,14 +4,14 @@ import static junit.framework.TestCase.assertEquals;
 
 public class UnitTest {
     @Test
-    public void shouldReturnCorrectValue() { assertEquals("5.5", Main.tenPercent(Main.test1));}
+    public void shouldReturnCorrectValue() { assertEquals(5.5, Main.tenPercent(Main.test1));}
 
     @Test
     public void shouldReturnZeroValue() {
-        assertEquals("-11.0", Main.tenPercent(Main.test2));
+        assertEquals(-11.0, Main.tenPercent(Main.test2));
     }
 
-    @Test
+    @Test (expected = ArithmeticException.class)
     public void shouldReturnFloatValue() {
         assertEquals("Why do you want to get a percentage of 0?", Main.tenPercent(Main.test3));
     }
