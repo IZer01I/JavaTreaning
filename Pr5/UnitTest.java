@@ -1,18 +1,34 @@
 import org.junit.Test;
+import org.junit.Before;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static junit.framework.TestCase.assertEquals;
 
 public class UnitTest {
-    @Test
-    public void shouldReturnCorrectValue() { assertEquals(Main.str1, Main.GetStr("Bebra"));}
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
 
-    @Test
-    public void shouldReturnZeroValue() {
-        assertEquals(Main.str2, Main.GetStr("Hello"));
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
     }
 
     @Test
-    public void shouldReturnFloatValue() {
-        assertEquals(Main.str3, Main.GetStr("Go to the cinema"));
+    public void FirstTest() {
+        Main.GetStr(Main.str1);
+        assertEquals("Your word: Bebra", outContent.toString());
     }
+
+    @Test
+    public void SecondTest() {
+        Main.GetStr(Main.str2);
+        assertEquals("Your word: Hello", outContent.toString());
+    }
+
+    @Test
+    public void ThirdTest() {
+        Main.GetStr(Main.str3);
+        assertEquals("Your word: Go to the cinema", outContent.toString());}
 }
