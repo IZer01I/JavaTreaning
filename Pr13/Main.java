@@ -1,9 +1,13 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println(writeToConsole("Hello world!"));
+        writeToConsole("Hello world!");
     }
 
-    public static String writeToConsole(String s) {
-        return ("printing: " + s);
+    public static void writeToConsole(String s) {
+        System.out.println ("printing: " + s);
     }
 }
