@@ -26,8 +26,6 @@ public class Main {
 
     static void Info(String name, int year) {
 
-        if(year < 0) System.out.println("Why would you enter a negative number?");
-        else
-        System.out.println("\n" + name + " will take over the world in " + year + " years. Mu-ha-ha!");
+            System.out.println("\n" + name + " will take over the world in " + year + " years. Mu-ha-ha!");
     }
 }
